@@ -14,11 +14,76 @@
 %head
    %title Belajar HAML 
 
--# Jika tag didalam child, berikan 3 space/spasi, bisa diartikan sebagai:
+-# Jika mempunyai child, berikan 3 space/spasi, bisa diartikan sebagai:
     <head>
         <title> Belajar HAML </title>
     </head>
 
 
 
--# ----- Single line tag ----- 
+-# ----- id/class tag ----- 
+
+/ Class
+.container
+   %p Element class
+
+/Id
+#container
+   %p Element id
+
+/Combine id with class
+.page#home
+   %p Element class dengan id
+
+/Multiple
+.container.main.dark-page#root
+   %p Multiple id, class
+
+-# HTML VERSION:
+   <div class='container'>
+   <p>Hello world</p>
+   </div>
+   
+   <div id='container'>
+   <p>Hello world</p>
+   </div>
+
+   <div class='page' id='home'>
+   <p>Element class dengan id</p>
+   </div>
+
+   <div class='container main dark-page' id='root'>
+   <p>Multiple id, class</p>
+   </div>
+
+
+
+-# ----- Attributes ----- 
+
+-# Atribut didalam haml harus diwrap dengan bracket {} 
+   Dan didalamnya berisi atribut dan value, 
+   Untuk inital value dimulai dengan => sama dengan artinya seoerti =
+
+/Bisa menggunakan :href
+%a{ :href => "gitlab.com/alfinsuryaS" } Link
+
+/Bisa menggunakan "href"
+%a{ "href" => "gitlab.com/alfinsuryaS" } Link
+
+/Multiple attributes
+%img{ :width => "500", :src => "/your_assets" }
+
+
+/Inital id dan class
+%main{ :class => "body-page dark", :id => "main" }
+   %h1 Hello World
+
+-# HTML VERSION:
+   <a href='gitlab.com/alfinsuryaS'>Link</a>
+   <a href='gitlab.com/alfinsuryaS'>Link</a>
+   <img src='/your_assets' width='500'>
+   
+   <main class='body-page dark' id='main'>
+     <h1>Hello World</h1>
+   </main>
+
