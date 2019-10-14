@@ -36,6 +36,7 @@
 
 
 - @condition = true
+- type = 'active'
 
 - if @condition
   -# Jika kondisi true
@@ -46,5 +47,10 @@
   %h2 Ini kondisi false
 
 
+-# Inline condition
+%body{ :class =>  @condition ? type : nil }
+
+
 -# HTML VERSION:
   <h2>Ini kondisi true</h2>
+  <body class='active'></body>
