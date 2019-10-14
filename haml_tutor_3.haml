@@ -1,6 +1,47 @@
 
 -# ----- Looping  ----- 
+-# Looping dalam haml menggunakan each do | paramater |
 
-- @loop.each do | i |
+- @loop = (0..5)
+- @loop.each do | note |
+    %h3= note
 
-%li My name #{i}
+-#  Output:
+    <h3>0</h3>
+    <h3>1</h3>
+    <h3>2</h3>
+    <h3>3</h3>
+    <h3>4</h3>
+    <h3>5</h3>
+  
+
+
+-#----- Array map  ----- 
+-#  Hampir sama seperti loop, hanya beda method saja 
+    dimulai dengan nama_var.map do | param |
+
+- @mapped = ['1', '2', '3']
+- @mapped.map do | item |
+    %p= "Item ke: #{item}"  
+
+
+-#  Output:
+    <p>Item ke: 1</p>
+    <p>Item ke: 2</p> 
+    <p>Item ke: 3</p>
+
+
+
+-# ----- Method  ----- 
+-# Hampir sama seperti membuat suatu attribut, tetapi hanya dibungkus/di wrap lagi dengan brackets
+
+-# Method 1 
+%a{ :href => 'gitlab.com/alfinsuryaS', :data => { type: 'string' } } Data1
+
+-# Method 2
+%a{ href: 'gitlab.com/alfinsuryaS', data: { type: 'string' } } Data2
+
+
+-#  Output:
+    <a data-type='string' href='gitlab.com/alfinsuryaS'>Data</a>
+    <a data-type='string' href='gitlab.com/alfinsuryaS'>Data2</a>

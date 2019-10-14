@@ -1,0 +1,53 @@
+
+
+
+-# ----- CSS in HAML  ----- 
+  Dimulai dengan : , lalu jenis type nya yaitu css
+
+-# Method 1 
+:css
+    body { background-color: white; }
+
+-# Method 2
+:css
+  * { 
+      margin: 0;
+      padding: 0;
+  }
+ 
+
+-#  Output:
+   <style>
+     body { background-color: white; }
+    </style>
+    
+    <style>
+    * { 
+      margin: 0;
+      padding: 0;
+    }
+    </style>
+
+
+
+-# ----- javascript in HAML  ----- 
+   Penulisan javascript pada HAML dimulai dengan tanda : , lalu typenya yait javascript
+
+-# Method 1 
+:javascript
+    console.log("Hello")
+
+-# Method 2 
+:javascript
+   var myHeading = document.querySelector('h1');
+   myHeading.innerHTML = 'Hello world!';
+
+-#  Output:
+    <script>
+      console.log("Hello")
+    </script>
+
+    <script>
+      var myHeading = document.querySelector('h1');
+      myHeading.innerHTML = 'Hello world!';
+    </script>

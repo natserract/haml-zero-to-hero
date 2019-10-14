@@ -3,7 +3,7 @@
 
 !!!
 
-/ HTML VERSION:
+-# Output:
 <!DOCTYPE html>
 
 
@@ -39,7 +39,7 @@
 .container.main.dark-page#root
    %p Multiple id, class
 
--# HTML VERSION:
+-# Output:
    <div class='container'>
    <p>Hello world</p>
    </div>
@@ -63,22 +63,26 @@
 -# Atribut didalam haml harus diwrap dengan bracket {} 
    Dan didalamnya berisi atribut dan value, 
    Untuk inital value dimulai dengan => sama dengan artinya seoerti =
+   
+   Penggunaanya sendiri terdapat beberapa cara
 
-/Bisa menggunakan :href
+-# Bisa menggunakan :href
 %a{ :href => "gitlab.com/alfinsuryaS" } Link
 
-/Bisa menggunakan "href"
+-# Bisa menggunakan "href"
 %a{ "href" => "gitlab.com/alfinsuryaS" } Link
 
-/Multiple attributes
+-# Multiple attributes
 %img{ :width => "500", :src => "/your_assets" }
 
-
-/Inital id dan class
+-# Inital id dan class
 %main{ :class => "body-page dark", :id => "main" }
    %h1 Hello World
 
--# HTML VERSION:
+-# Bisa juga dengan cara ini
+%img{ src: '/your_assets', alt: 'Image Alt' }
+
+-# Output:
    <a href='gitlab.com/alfinsuryaS'>Link</a>
    <a href='gitlab.com/alfinsuryaS'>Link</a>
    <img src='/your_assets' width='500'>

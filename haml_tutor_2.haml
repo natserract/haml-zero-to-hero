@@ -2,22 +2,22 @@
 -# ----- Self closing tags ----- 
 %br/
 
--# HTML VERSION:
+-# Output:
    <br>
 
 
 -# ----- Variabel pada HAML ----- 
 
 -# Untuk mendlakarasikan variabel dimulai dengan dash 
-  beserta nama var & valuenya. Pemanggilan var terdapat perbedaan,
-  JIka didalam string, dimulai dengan
+   beserta nama var & valuenya. Pemanggilan var terdapat perbedaan,
+   JIka didalam string, dimulai dengan
   
-  #{nama_variabel}
+   #{nama_variabel}
 
-/Pemanggilan var
+-# Pemanggilan var
 - type = 'dark'
 %body{ :class => type }
-  %h2 Heading
+   %h2 Heading
 
 -# Var dalam string
 - change = 'active'
@@ -27,13 +27,13 @@
 - @classes = ['class1', 'class2']
 %h2{ :class => @classes }
 
--# HTML VERSION:
+-# Output:
    <body class='dark'>
     <h2>Heading</h2>
    </body>
-  <a class='default active'>Link</a>
+   <a class='default active'>Link</a>
 
-  <h2 class='class1 class2'></h2>
+   <h2 class='class1 class2'></h2>
 
 
 
@@ -46,20 +46,20 @@
 - type = 'active'
 
 - if @condition
-  -# Jika kondisi true
-  %h2 Ini kondisi true 
+   -# Jika kondisi true
+   %h2 Ini kondisi true 
 
-  -# Jika kondisi false  
 - else 
-  %h2 Ini kondisi false
+   -# Jika kondisi false
+   %h2 Ini kondisi false
 
 
 -# Inline condition
 %body{ :class =>  @condition ? type : nil }
 
 
--# HTML VERSION:
-  <h2>Ini kondisi true</h2>
-  <body class='active'></body>
+-# Output:
+   <h2>Ini kondisi true</h2>
+   <body class='active'></body>
 
 
