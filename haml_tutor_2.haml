@@ -1,0 +1,50 @@
+
+-# ----- Variabel pada HAML ----- 
+
+-# Untuk mendlakarasikan variabel dimulai dengan dash 
+  beserta nama var & valuenya. Pemanggilan var terdapat perbedaan,
+  JIka didalam string, dimulai dengan
+  
+  #{nama_variabel}
+
+/Pemanggilan var
+- type = 'dark'
+%body{ :class => type }
+  %h2 Heading
+
+-# Var dalam string
+- change = 'active'
+%a{ :class => "default #{change}" } Link
+
+-# Menggunakan @ inital Var, dan array untuk inital multiple values
+- @classes = ['class1', 'class2']
+%h2{ :class => @classes }
+
+-# HTML VERSION:
+   <body class='dark'>
+    <h2>Heading</h2>
+   </body>
+  <a class='default active'>Link</a>
+
+  <h2 class='class1 class2'></h2>
+
+
+
+-# ----- Conditional pada HAML ----- 
+   Dalam haml, untuk membuat suatu kondisi dimulai dengan - 
+   lalu buat kondisi nya, if dan else seperti biasa
+
+
+- @condition = true
+
+- if @condition
+  -# Jika kondisi true
+  %h2 Ini kondisi true 
+
+  -# Jika kondisi false  
+- else 
+  %h2 Ini kondisi false
+
+
+-# HTML VERSION:
+  <h2>Ini kondisi true</h2>
